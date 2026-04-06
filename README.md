@@ -1,39 +1,39 @@
-# Context7 Documentation Finder Plugin
+# 🚀 Context7 Documentation Finder Plugin
 
-A documentation lookup and search plugin for the Eaze Editor AI system, integrating Context7's capabilities natively via Context Model Protocol (MCP). 
+A blazing-fast documentation lookup and search plugin for the Eaze Editor AI system, integrating Context7's capabilities natively via Context Model Protocol (MCP).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Powered by Context7](https://img.shields.io/badge/Powered_by-Context7-orange.svg)](https://context7.com)
 
-## Overview
+## ✨ Overview
 
-The Context7 Documentation Finder plugin supercharges your AI coding assistant with real-time documentation, API references, and syntax tutorials across various modern frameworks! It lets the agent interact dynamically with the [Context7 API](https://context7.com) inside the editor.
+The Context7 Documentation Finder plugin supercharges your AI coding assistant with real-time documentation, API references, and syntax tutorials across various modern frameworks! It lets the agent interact dynamically with the [Context7 API](https://context7.com) right inside the editor, so you never have to break your flow context-switching to a browser safely.
 
-## Features
+## 🌟 Features
 
-- **Real-time Documentation Search**: Search for documentation using the Context7 API
-- **Multi-library Support**: Support for React, Vue, Angular, Node.js, Python, Java, TypeScript, Go, Rust, C#, and PHP
-- **MCP Integration**: Seamless integration with the Eaze Editor AI Core Model Context Protocol system
-- **Auto-detect Library**: Automatically detect the library based on IDE or imports code context
-- **Configurable Settings**: Customize API keys, request timeouts, and result limits
-- **Secure Persistence**: Secure preferences handler persisting your configurations in the editor.
+- 🔍 **Real-time Documentation Search**: Search for documentation using the Context7 API.
+- 📚 **Multi-library Support**: Rich support for React, Vue, Angular, Node.js, Python, Java, TypeScript, Go, Rust, C#, PHP, and more.
+- 🤖 **MCP Integration**: Seamlessly hooks into the Eaze Editor AI Core using the Model Context Protocol.
+- ⚡ **Auto-detect Library**: Automatically detect the framework based on IDE context or imports.
+- ⚙️ **Configurable Settings**: Customize your search experience, request timeouts, and result limits.
+- 🔒 **Secure Persistence**: Secure preferences handler persisting your configurations securely in the editor.
 
-## Installation
+## 🚀 Installation
 
 1. Build the plugin: `./gradlew build`
-2. Copy the resulting plugin JAR from `eaze-editor-plugin/build/libs/` to the Eaze Editor plugins directory
-3. Restart the editor to allow the tool registry to load the MCP settings
+2. Install the resulting plugin JAR from `eaze-editor-plugin/build/libs/` to the Eaze Editor plugins page.
+3. Restart the editor to allow the tool registry to load the MCP settings.
 
-## Configuration
+## 🛠️ Configuration
 
 Access the plugin settings through the Eaze Editor settings panel:
-- Enable/disable the plugin
-- Configure Context7 API key
-- Set preferred library for documentation search
-- Adjust maximum results and request timeout
-- Enable auto-lookup on code selection
+- ✅ **Enable/disable** the plugin
+- 🔑 **Configure Context7 API key** — *Get your API key at [context7.com](https://context7.com/)*
+- 🎯 **Set preferred library** for default documentation search
+- ⏱️ **Adjust limits** for maximum results and request timeouts
+- 🪄 **Auto-lookup** toggle for code selection snippets
 
-## Plugin Structure
+## 📂 Plugin Structure
 
 ```text
 eaze-editor-context7-plugin/
@@ -74,6 +74,6 @@ eaze-editor-context7-plugin/
 
 MIT License
 
-## Author
-
-Nurujjaman Pollob
+## 👨‍💻 Credits & Authors
+* **Author**: [Nurujjaman Pollob](https://github.com/nurujjamanpollob)
+* **Platform**: Built for [Eaze Editor](https://eazeditor.com/) by the Eaze Editor Team.
