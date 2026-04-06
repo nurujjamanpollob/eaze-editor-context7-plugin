@@ -20,7 +20,7 @@ public class Context7LifecycleObserver {
     public void onPluginStart() {
         PluginLogger.info("Context7 Documentation Plugin starting...", Context7LifecycleObserver.class);
 
-        new Context7SettingsHandler(); // important for setting screen creation
+        //new Context7SettingsHandler(); // important for setting screen creation
         // Initialize the plugin singleton
         Context7Plugin.getInstance().initialize();
         

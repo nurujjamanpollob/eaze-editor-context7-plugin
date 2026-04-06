@@ -24,6 +24,7 @@ public class Context7Plugin {
     public Context7Plugin() {
         instance = this;
     }
+    private Context7SettingsHandler settingsHandler;
 
     /**
      * Gets the singleton instance of the plugin.
@@ -57,6 +58,7 @@ public class Context7Plugin {
             if (!standaloneMode) {
 
 
+                settingsHandler = new Context7SettingsHandler();
                 // Initialize MCP handler
                 this.mcpHandler = new Context7MCPHandler();
 
@@ -72,5 +74,15 @@ public class Context7Plugin {
 
     public boolean isActive() {
         return active;
+    }
+
+    /**
+     * Get the mcp handler
+     */
+    public Context7MCPHandler getMCPHandler() {
+        return mcpHandler;
+    }
+    public Context7SettingsHandler getSettingsHandler() {
+        return settingsHandler;
     }
 }
