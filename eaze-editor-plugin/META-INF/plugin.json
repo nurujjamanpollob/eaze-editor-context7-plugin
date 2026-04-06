@@ -1,0 +1,21 @@
+{
+  "name": "context7_docs",
+  "version": "1.0.0",
+  "displayName": "Context7 Documentation",
+  "description": "Context7 documentation lookup and search integration for AI-assisted development. Enables searching and retrieving documentation for various libraries and frameworks.",
+  "author": "Nurujjaman Pollob",
+  "mainClass": "com.nurujjamanpollob.contextseven.eazeeditorplugin.Context7Plugin",
+  "entryPoint": "com.nurujjamanpollob.contextseven.eazeeditorplugin.Context7Plugin",
+  "mcpEndpoints": [
+    "com.nurujjamanpollob.contextseven.eazeeditorplugin.mcp.Context7MCPHandler"
+  ],
+  "settingsPage": "settings",
+  "aboutPage": "about",
+  "icon": "icon.png",
+  "permissions": [
+    "network",
+    "filesystem",
+    "ai_tools"
+  ],
+  "dependencies": []
+}

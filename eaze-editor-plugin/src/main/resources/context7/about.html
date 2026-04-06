@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Context7 Documentation</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --bg-color: #1e1e1e;
+            --card-bg: #2d2d2d;
+            --text-color: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-color: #4b5563;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .header p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .feature-icon {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .feature-content h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .feature-content p {
+            margin: 4px 0 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .version-badge {
+            background-color: var(--border-color);
+            color: var(--text-color);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Context7 Documentation</h1>
+            <p>AI-Assisted Documentation Search & Retrieval</p>
+            <div class="version-badge">v1.0.0</div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">Overview</h2>
+            <p>
+                Context7 Documentation is a powerful plugin for Eaze Editor that integrates documentation search and retrieval directly into the AI-assisted development workflow. It allows the AI agent to find relevant documentation for libraries, frameworks, and APIs, providing more accurate and context-aware code suggestions.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Semantic Search</h3>
+                        <p>Find documentation based on natural language queries and semantic meaning.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Multi-Library Support</h3>
+                        <p>Access documentation for a wide range of popular libraries and frameworks.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>AI Integration</h3>
+                        <p>Seamlessly integrated with the AI agent via the Model Context Protocol (MCP).</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Detailed Retrieval</h3>
+                        <p>Retrieve full documentation details, including examples, parameters, and return types.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">How it Works</h2>
+            <p>
+                The plugin uses the Context7 Core engine to index and search documentation. When the AI agent needs information about a specific library or function, it uses the provided MCP tools to search for and retrieve the relevant documentation, which is then used to inform its responses.
+            </p>
+        </div>
+
+        <div class="footer">
+            &copy; 2024 Nurujjaman Pollob. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

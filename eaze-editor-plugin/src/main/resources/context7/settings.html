@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context7 Documentation Settings</title>
+    <script src="tailwind.cdn.js"></script>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            background-color: #252526;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .input-field {
+            background-color: #3c3c3c;
+            border: 1px solid #555;
+            color: #fff;
+            border-radius: 4px;
+            padding: 8px 12px;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #007acc;
+        }
+        .btn-primary {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #0062a3;
+        }
+        .btn-primary:disabled {
+            background-color: #444;
+            cursor: not-allowed;
+        }
+        .label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #9cdcfe;
+        }
+        .description {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 4px;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #444;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #007acc;
+        }
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+        #status-msg {
+            height: 24px;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-2xl mx-auto">
+        <div class="flex items-center mb-8">
+            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold text-white">Context7 Documentation</h1>
+                <p class="text-gray-400">AI-powered documentation search and lookup</p>
+            </div>
+        </div>
+
+        <div class="card space-y-6">
+            <!-- Enable Plugin -->
+            <div class="flex items-center justify-between">
+                <div>
+                    <label class="font-semibold text-white">Enable Context7 Plugin</label>
+                    <p class="description">Activate or deactivate documentation search features.</p>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="enable_plugin">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <hr class="border-gray-700">
+
+            <!-- API Key -->
+            <div>
+                <label for="api_key" class="label">Context7 API Key</label>
+                <input type="password" id="api_key" class="input-field" placeholder="Enter your API key">
+                <p class="description">Your personal API key from context7.com dashboard.</p>
+            </div>
+
+            <!-- Base URL -->
+            <div>
+                <label for="base_url" class="label">API Base URL</label>
+                <input type="text" id="base_url" class="input-field" placeholder="https://context7.com/api/v2">
+                <p class="description">The endpoint for Context7 API requests.</p>
+            </div>
+
+            <!-- Default Library -->
+            <div>
+                <label for="default_library" class="label">Default Library</label>
+                <input type="text" id="default_library" class="input-field" placeholder="open-source-libraries">
+                <p class="description">The default documentation library to search in.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Search Timeout -->
+                <div>
+                    <label for="search_timeout" class="label">Search Timeout (seconds)</label>
+                    <input type="number" id="search_timeout" class="input-field" min="1" max="120">
+                    <p class="description">Maximum time to wait for search results.</p>
+                </div>
+
+                <!-- Max Results -->
+                <div>
+                    <label for="max_results" class="label">Max Results</label>
+                    <input type="number" id="max_results" class="input-field" min="1" max="50">
+                    <p class="description">Number of documentation snippets to return.</p>
+                </div>
+            </div>
+
+            <div class="pt-4 flex items-center justify-between">
+                <div id="status-msg"></div>
+                <button id="save-btn" class="btn-primary">
+                    Save Settings
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center text-gray-500 text-sm">
+            <p>Context7 Plugin v1.1.0 &bull; Developed by Nurujjaman Pollob</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Gradle directories and files
+.gradle/
+build/
+*/build/
+out/
+bin/
+
+# Gradle Wrapper (typically ignored except wrapper jar and properties)
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# IDE specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.settings/
+.classpath
+.project
+.vscode/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+
+# Explicitly ignored due to sensitive API key inclusion
+core/src/main/java/com/nurujjamanpollob/contextseven/eazeeditorplugin/core/Main.java
+

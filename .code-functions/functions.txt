@@ -1,0 +1,19 @@
+# Project: Eaze Editor Context7 Plugin
+# Developer: Nurujjaman Pollob
+# Package: com.nurujjamanpollob.contextseven.eazeeditorplugin
+
+## File Responsibilities:
+
+- `Context7Client.java`: Main API client for interacting with Context7 API. Handles HTTP requests, authentication, and response parsing.
+- `Main.java`: Entry point for the application. Demonstrates how to use the `Context7Client`.
+- `models/LibrarySearchResult.java`: Data model for a single library search result.
+- `models/LibrarySearchResponse.java`: Data model for the library search API response.
+- `models/ContextResponse.java`: Data model for the context retrieval API response.
+- `models/ErrorResponse.java`: Data model for API error responses.
+- `exceptions/Context7ApiException.java`: Custom exception for handling API-specific errors.
+- `config/Config.java`: Configuration class for API settings. Handles loading the API key from multiple sources (programmatic, .env, context7.conf, environment variables).
+- `src/main/resources/context7.conf`: Configuration file for API settings in the JAR resource folder.
+- `.env`: Environment variable configuration file for sensitive information.
+- `build.gradle`: Gradle build configuration file.
+- `settings.gradle`: Gradle settings file.
+- `README.md`: Project documentation and usage guide.

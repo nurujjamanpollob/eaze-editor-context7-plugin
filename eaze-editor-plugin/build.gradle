@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.nurujjamanpollob.contextseven.eazeeditorplugin'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+// Disable Javadoc generation to avoid errors
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-parameters']
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+            'Plugin-Name': 'context7',
+            'Plugin-Version': version,
+            'Plugin-Class': 'com.nurujjamanpollob.contextseven.eazeeditorplugin.Context7Plugin',
+            'Plugin-Author': 'Nurujjaman Pollob',
+            'Plugin-Description': 'Context7 documentation lookup and search integration for AI-assisted development',
+            'Class-Path': 'eaze-editor-plugin-sdk'
+        )
+    }
+
+    // Include plugin.json from META-INF
+    from('META-INF') {
+        into('META-INF')
+        include 'plugin.json'
+    }
+
+    // Create a fat jar including dependencies
+    from {
+        configurations.runtimeClasspath
+            .filter { !it.path.contains('sdks') } // Exclude SDK jars - they're provided by host
+            .collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+dependencies {
+    // Local core module dependency
+    implementation project(':context7_core')
+    
+    // Plugin SDK dependency - compile only (provided by host at runtime)
+    compileOnly fileTree(dir: '../sdks', include: 'eaze-editor-plugin-sdk.jar')
+
+    // Jackson for JSON processing
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.21.1'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.21.1'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.16.1'
+    
+    // Test dependencies
+    testImplementation platform('org.junit:junit-bom:5.10.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+// test {
+//     useJUnitPlatform()
+// }
